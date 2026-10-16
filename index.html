@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KOMMANDO PLATFORM - 3D CUBE Style</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KOMMANDO PLATFORM - 3D CUBE Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Roboto&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       font-family: 'Orbitron', sans-serif;
       margin: 0;
@@ -164,19 +165,175 @@
       border-color: #777;
     }
   </style>
-</head>
+<style>
+/* ISOLIERTE STILE DES NACHRICHTENPANELS */
+#news-section {
+            background-color: #000;
+            font-family: "Orbitron", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #00ffe0;
+        }
+#news-section .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5em 1em;
+            border-bottom: 2px solid #00ffff;
+            background-color: #050505;
+        }
+#news-section .system-indicator {
+            display: flex;
+            align-items: center;
+        }
+#news-section .system-indicator .label {
+            margin-right: 0.5em;
+            font-weight: bold;
+            color: #00ffff;
+        }
+#news-section .status-green {
+            color: #0f0;
+        }
+#news-section .controls button {
+            margin-left: 0.5em;
+            background: transparent;
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            padding: 0.3em 0.6em;
+            font-family: "Orbitron", sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+#news-section .controls button:hover {
+            background: #00ffff;
+            color: #000;
+        }
+#news-section .main-container {
+            display: flex;
+            flex-direction: row;
+            height: calc(100vh - 50px);
+        }
+#news-section .content-area {
+            width: 100%;
+            padding: 1em;
+            position: relative;
+        }
+#news-section .mpu-fragen-log {
+            position: relative;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #050515, #000000);
+            padding: 20px;
+            border: 2px solid #00ffff;
+            height: 80vh;
+            overflow-y: auto;
+            font-size: 0.9em;
+            text-align: left;
+            box-shadow: 0 0 10px #00ffff;
+        }
+#news-section .mpu-fragen-log::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 0;
+        }
+#news-section .mpu-fragen-log * {
+            position: relative;
+            z-index: 1;
+        }
+#news-section .mpu-fragen-log h3 {
+            color: #00ffff;
+            margin-top: 0;
+            text-shadow: 0 0 5px #00ffff;
+            border-bottom: 1px solid #00ffff;
+            padding-bottom: 0.5em;
+        }
+#news-section p.question {
+            font-weight: bold;
+            color: #f8f8ff;
+            text-shadow: 0 0 2px #fff;
+            margin-top: 1.5em;
+            background: transparent;
+            padding: 5px;
+            border-radius: 5px;
+        }
+#news-section p.answer {
+            color: rgba(204, 255, 0, 0.9);
+            text-shadow: 0 0 3px #ccff00;
+            margin-left: 1.5em;
+            background: transparent;
+            padding: 5px;
+            border-radius: 5px;
+        }
+#news-section .current-qa {
+            background-color: rgba(0, 90, 120, 0.7);
+            box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff, inset 0 0 8px rgba(0, 255, 255, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+#news-section p.question.current-qa {
+            text-shadow: none;
+        }
+#news-section p.answer.current-qa {
+            text-shadow: none;
+        }
+#news-section .answer-image {
+            max-width: 70%; 
+            height: auto;     
+            margin: 0.5em auto;  
+            display: block;      
+            border: 1px solid #00ffff; 
+            box-shadow: 0 0 5px #00ffff; 
+        }
+#news-section #video-wrapper {
+           max-width: 70%;
+           margin: 0.5em auto;
+
+        }
+#news-section #video-wrapper iframe {
+          width: 100%;
+          height: 400px; 
+          border: 1px solid #00ffff; 
+          box-shadow: 0 0 5px #00ffff;
+
+       }
+/* Offener, fließender Nachrichtenbereich unter der Kartengalerie */
+#news-section { box-sizing:border-box; background:#000; color:#00ffe0; font-family:'Orbitron',sans-serif; margin: 24px auto 0; padding: 0 12px 28px; max-width: 1440px; }
+#news-section *,#news-section *::before,#news-section *::after { box-sizing:border-box; }
+#news-section .top-bar { flex-wrap:wrap; gap:12px; border:2px solid #00ffff; border-bottom:0; border-radius:12px 12px 0 0; }
+#news-section .main-container { display:block; height:auto; }
+#news-section .content-area { width:100%; padding:0; }
+#news-section .mpu-fragen-log { height:auto; min-height:320px; max-height:none; overflow:visible; margin:0; border-radius:0 0 12px 12px; overflow-wrap:anywhere; }
+#news-section .mpu-fragen-log::before { pointer-events:none; }
+#news-section .answer { margin-left: 0.8em; }
+#news-section #video-wrapper, #news-section .video-wrapper { max-width: min(100%, 740px); margin: 12px auto; aspect-ratio:16 / 9; }
+#news-section #video-wrapper iframe, #news-section .video-wrapper iframe { display:block; height:100%; width:100%; }
+#news-section .answer-image { max-width:100%; }
+#news-section .controls { display:flex; gap:8px; flex-wrap:wrap; }
+#news-section .controls button { min-height:42px; margin-left:0; border-radius:6px; }
+@media (max-width:600px) {
+ header { font-size: 1.05rem; padding: 27px 68px 20px; letter-spacing:0.3px; }
+ .gallery { grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:12px; padding:14px 10px; }
+ .card { max-width:100%; }
+ .mode-toggle { position:fixed; font-size:0.76rem; right:6px; top:6px; padding:7px; }
+ #news-section { padding:0 8px 24px; }
+ #news-section .top-bar { justify-content:center; }
+ #news-section .mpu-fragen-log { padding:14px 12px; font-size:0.9rem; }
+ #news-section .answer { margin-left:0; }
+}
+</style></head>
 <body>
-  <header>
-    <div id="logo-container">
-        <canvas id="logo-canvas"></canvas>
-    </div>
-      KOMMANDO ZENTRALE VALI+GABI
+<header>
+<div id="logo-container">
+<canvas id="logo-canvas"></canvas>
+</div>
+      KOMMANDO ZENTRALE GICA+GABI
   </header>
-
-  <button class="mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-  <div class="gallery" id="card-gallery"></div>
-
-  <script type="module">
+<button class="mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+<div class="gallery" id="card-gallery"></div>
+<script type="module">
     //---------- LOGO CODE (from LOGO.html, adapted) ----------
     import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
@@ -408,7 +565,174 @@
     window.toggleDarkMode = toggleDarkMode;
 
   </script>
-</body>
+<section aria-label="MPU STIRI – Nachrichten" id="news-section">
+<div class="top-bar">
+<div class="system-indicator">
+<span class="label">System Status:</span>
+<span class="status-green">OK</span>
+</div>
+<div class="controls">
+<button id="pauseBtn">PAUZĂ</button>
+<button id="resumeBtn">MAI DEPARTE</button>
+</div>
+</div>
+<div class="main-container">
+<div class="content-area">
+<div class="mpu-fragen-log" id="mpuFragenLog">
+<h3>MPU STIRI</h3>
+</div>
+</div>
+</div>
+
+</section><script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mpuFragenLog = document.getElementById('mpuFragenLog');
+
+            const mpuFragenAntworten = [
+              
+             {
+                "question": "Cum vă vedeți ca șofer în trecut?",
+                "answer": "<ul>\n    <li><strong>Am fost un șofer egoist și neglijent,</strong> mă gândeam doar la mine și nu la consecințe!</li>\n    <li><strong>Îmi pare rău!</strong></li>\n</ul>"
+            },
+            {
+                "question": "Ce credeți că este un șofer bun, normal?",
+                "answer": "<ul>\n    <li>Un șofer de mașină bun este cineva care <strong>respectă regulile,</strong> este <strong>atent,</strong> se gândește la alții și nu mai reprezintă un pericol în trafic!</li>\n</ul>"
+            },
+            {
+                "question": "Câte persoane trebuie să meargă la MPU pe an?",
+                "answer": "<ul>\n    <li>90.000 de persoane în anul 2019, <strong>din cauza alcoolului 40%</strong> , droguri și medicamente cu 30%, puncte 18%, restul 12%.</li>\n</ul>"
+            },
+            {
+                "question": "Ultima dată când ați spus Nu?",
+                "answer": "<ul>\n    <li>Am refuzat unui prieten care <strong>sa mutat pentru a cincea oară în doi ani</strong> și care a avut nevoie din nou de oameni pentru a transporta cutii.</li>\n</ul>"
+            },
+             {
+                "question": "Ați fost un șofer sigur?",
+                "answer": `
+                 <p><strong>Nu, altfel nu aș fi la MPU, deoarece șoferii foarte buni nu trebuie să meargă la MPU!<strong><p>
+                 <div id="video-wrapper">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/dFyrz1dIjXk?si=H7vPJNxbRS3pnG-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 </div>
+             `
+
+            },
+            {
+    "question": "Cum apreciați faptul că până la accident nu ați avut niciodată un accident mai mare?",
+    "answer": "<ul><li>A fost doar <strong>noroc</strong>!</li></ul>"
+  },
+           {
+    "question": "De ce avem atâtea reguli și legi?",
+    "answer": `
+        <ul>
+            <li><strong>Avem nevoie de reguli.</strong></li>
+            <li><strong>Regulile ne protejează.</strong></li>
+            <li><strong>Am înțeles că dacă respect regulile voi trăi în siguranță și în pace.</strong></li>
+            <li><strong>Fără reguli ar fi doar haos.</strong></li>
+        </ul>
+        <div id="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dM5Di1rTKIg?si=1uqc3sdi4eil7mY_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    `
+}
+            ];
+
+            let frageAntwortIndex = 0;
+            const delayBetweenEntries = 7000; //Erhöht, wegen Videos
+            let isPaused = false;
+            let currentQAElement = null;
+
+            function addMpuFrageAntwort() {
+                if (isPaused) return;
+
+                if (currentQAElement) {
+                    currentQAElement.classList.remove('current-qa');
+                }
+
+                if (frageAntwortIndex < mpuFragenAntworten.length) {
+                    const qaPair = mpuFragenAntworten[frageAntwortIndex];
+
+                    const frageElement = document.createElement('p');
+                    frageElement.classList.add('question');
+                    frageElement.textContent = qaPair.question;
+                    mpuFragenLog.appendChild(frageElement);
+
+                    frageElement.classList.add('current-qa');
+                    currentQAElement = frageElement;
+
+                    setTimeout(() => {
+                        const antwortElement = document.createElement('p');
+                        antwortElement.classList.add('answer');
+
+                        // Prüfe, ob die Antwort ein Objekt (mit Video/Bild) oder ein String ist
+                        if (typeof qaPair.answer === 'object') {
+                            antwortElement.innerHTML = qaPair.answer.text; // Rendere den Text
+
+                            // Video hinzufügen, falls vorhanden
+                            if (qaPair.answer.video) {
+                                const videoWrapper = document.createElement('div');
+                                videoWrapper.id = "video-wrapper";
+                                const videoIframe = document.createElement('iframe');
+                                videoIframe.width = "560"; // Oder eine andere Größe
+                                videoIframe.height = "315";
+                                videoIframe.src = `https://www.youtube.com/embed/${qaPair.answer.video}`;
+                                videoIframe.title = "YouTube video player";
+                                videoIframe.frameBorder = "0";
+                                videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                                videoIframe.allowFullscreen = true;
+                                videoWrapper.appendChild(videoIframe);
+                                antwortElement.appendChild(videoWrapper);
+                            }
+
+                            // Bild hinzufügen, falls vorhanden
+                            if (qaPair.answer.image) {
+                                const imageWrapper = document.createElement('div');
+                                imageWrapper.classList.add('image-wrapper');
+                                const imageElement = document.createElement('img');
+                                imageElement.src = qaPair.answer.image;
+                                imageElement.alt = qaPair.answer.altText || "Bild zur Frage"; // Alt-Text, falls vorhanden
+                                imageElement.classList.add('answer-image'); // Füge die CSS-Klasse hinzu
+                                imageWrapper.appendChild(imageElement);
+                                antwortElement.appendChild(imageWrapper);
+
+                            }
+                        } else {
+                            // Wenn die Antwort nur Text ist
+                            antwortElement.innerHTML = qaPair.answer;
+                        }
+
+                        mpuFragenLog.appendChild(antwortElement);
+                        mpuFragenLog.scrollTop = mpuFragenLog.scrollHeight;
+
+                        antwortElement.classList.add('current-qa');
+                        currentQAElement = antwortElement;
+
+                    }, 2000);
+
+                    frageAntwortIndex++;
+                } else {
+                    frageAntwortIndex = 0; // Wieder von vorne beginnen
+                }
+            }
+
+
+            let intervalId = setInterval(addMpuFrageAntwort, delayBetweenEntries);
+
+            const pauseBtn = document.getElementById('pauseBtn');
+            const resumeBtn = document.getElementById('resumeBtn');
+
+            pauseBtn.addEventListener('click', function() {
+                isPaused = true;
+                 if(currentQAElement){
+                  currentQAElement.classList.remove('current-qa');
+                }
+            });
+
+            resumeBtn.addEventListener('click', function() {
+                isPaused = false;
+                addMpuFrageAntwort();
+            });
+
+            addMpuFrageAntwort();
+        });
+    </script></body>
 </html>
-
-
